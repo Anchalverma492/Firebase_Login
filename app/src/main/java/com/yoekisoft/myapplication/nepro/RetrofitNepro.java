@@ -87,7 +87,7 @@ public class RetrofitNepro extends AppCompatActivity {
                 Toast.makeText(RetrofitNepro.this, "" + response.body().getItemId(), Toast.LENGTH_SHORT).show();
                 String itemId1 = response.body().getItemId();
 
-//Site List
+
                 List<SiteListDatum> herolist = response.body().getSiteListData();
 
                 String[] sitelist = new String[herolist.size()];
