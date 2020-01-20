@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "322292372608",
+    "firebase_url": "https://fir-login-43f06.firebaseio.com",
+    "project_id": "fir-login-43f06",
+    "storage_bucket": "fir-login-43f06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322292372608:android:d3d85850a8b720a510c265",
+        "android_client_info": {
+          "package_name": "com.yoekisoft.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322292372608-5032hj8ht37ls0rbupg0i8i0c0kaq3rh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yoekisoft.myapplication",
+            "certificate_hash": "f3971655ff3f521f5c8e8ff2f92ed6977cb34eb9"
+          }
+        },
+        {
+          "client_id": "322292372608-jqud20gi6sime57968d1vhlnfpqjqbgv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yoekisoft.myapplication",
+            "certificate_hash": "f3d34b1a318bbb511727f1e945236bb350edbfa6"
+          }
+        },
+        {
+          "client_id": "322292372608-e86komfdd1mf3h7bj29smqb2vvv1k059.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4mCTbFnVF8EwXVixhuFVlAF9o9GqM7Lc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322292372608-e86komfdd1mf3h7bj29smqb2vvv1k059.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

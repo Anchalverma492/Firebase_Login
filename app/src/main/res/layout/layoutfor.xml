@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#A6ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutMember"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textNotificationHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Sender name : " />
+
+        <TextView
+            android:id="@+id/senderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:textAlignment="viewStart"
+            android:layout_below="@+id/textNotificationHeading"
+            android:text="kartik pandey group"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_below="@+id/senderName"
+            android:text="kartik pandey groupkartik pandey group
+kartik pandey groupkartik pandey groupkartik pandey."
+            android:textSize="14sp"
+            android:textStyle="bold" />
+       <Button
+           android:id="@+id/decline"
+           android:layout_marginTop="8dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Decline"
+           android:layout_below="@+id/textMessage"
+           android:layout_toLeftOf="@+id/accept"/>
+        <Button
+            android:id="@+id/accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/textMessage"
+            android:layout_alignParentRight="true"/>
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:background="#BBB" />-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_donut"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"/>
+
+    </RelativeLayout>
+</LinearLayout>

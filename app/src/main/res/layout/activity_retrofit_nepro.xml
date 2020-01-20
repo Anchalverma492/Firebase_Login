@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".nepro.RetrofitNepro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/stickerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight=".8"
+            android:hint="ENTER STICKER NUMBER........" />
+
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:src="@drawable/ic_magnifier" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:visibility="invisible"
+            android:id="@+id/scrollblock"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_login"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:textColor="@color/colorPrimary"
+                        android:text="StickerID" />
+
+                    <TextView
+                        android:id="@+id/stickerid"
+                        android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="8dp"
+
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_login"
+
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorPrimary"
+
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:text="WareHouseName" />
+
+                    <TextView
+                        android:id="@+id/WareHouseName"
+                        android:textColor="@color/Black"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_login"
+                    android:padding="8dp"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+
+                        android:layout_weight=".1"
+                        android:text="ItemId" />
+
+                    <TextView
+                        android:id="@+id/itemId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/Black"
+
+                        android:layout_weight=".1" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="SiteListData"/>
+                <ListView
+                    android:id="@+id/siteList"
+
+                    android:layout_width="match_parent"
+                    android:background="@drawable/round_login"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp" />
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimary"
+
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:text="ReasonList"/>
+                <ListView
+                    android:id="@+id/reasonListid"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/round_login"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/textWare"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="invisible"
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="WareHouseList"/>
+                <ListView
+                    android:id="@+id/wareHouseListid"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/round_login"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>
