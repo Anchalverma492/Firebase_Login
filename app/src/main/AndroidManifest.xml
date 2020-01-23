@@ -13,22 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity android:name=".DAtabase.FireBaseData">
-
-        </activity>
-        <activity android:name=".Encryption.SharedPreference" />
-        <activity android:name=".ViewPager.ViewDemo">
-
-        </activity>
-        <activity android:name=".nepro.RetrofitNepro" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Encryption.SharedPreference" />
+        <activity android:name=".ViewPager.ViewDemo" />
+        <activity android:name=".nepro.RetrofitNepro" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".Auth.MainActivity" />
+        <service android:name=".FirebaseMsg.CloudMessaging">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
