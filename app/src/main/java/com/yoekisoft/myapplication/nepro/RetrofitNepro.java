@@ -101,9 +101,9 @@ public class RetrofitNepro extends AppCompatActivity {
                 siteList.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, sitelist));
 
 
-                List nameList = new ArrayList<String>(Arrays.asList(sitelist));
+               /* List nameList = new ArrayList<String>(Arrays.asList(sitelist));
 
-                myRef.child("SiteList").setValue(nameList);
+                myRef.child("SiteList").setValue(nameList);*/
 
 
 

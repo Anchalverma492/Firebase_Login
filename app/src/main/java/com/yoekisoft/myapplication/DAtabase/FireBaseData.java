@@ -8,35 +8,43 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.inappmessaging.FirebaseInAppMessaging;
+import com.yoekisoft.myapplication.FirebaseMsg.InAppMsg;
 import com.yoekisoft.myapplication.R;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class FireBaseData extends AppCompatActivity implements View.OnClickListener {
     private DatabaseReference mDatabase;
-    EditText Fsttext, scndtext,emailtext,phonetext;
-    Button upload,delete;
-     String name,sName,phone,email;
+    EditText Fsttext, scndtext, emailtext, phonetext,searchText;
+    Button upload, delete,search;
+    TextView show;
+    String name, sName, phone, emailString,searchString;
     DatabaseReference myRef;
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire_base_data);
         initialize();
-
+        InAppMsg listener = new InAppMsg();
+        FirebaseInAppMessaging.getInstance().addClickListener(listener);
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-       myRef = database.getReference("USER");
-Log.d("data",name+sName);
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("USER");
+        Log.d("data", name + sName);
 
       /*  mDatabase.child(userId).addValueEventListener(new ValueEventListener() {
             @Override
@@ -44,7 +52,7 @@ Log.d("data",name+sName);
 
                 User user = dataSnapshot.getValue(User.class);
 
-                Log.d(TAG, "User name: " + user.getName() + ", email " + user.getEmail());
+                Log.d(TAG, "User name: " + user.getName() + ", emailString " + user.getEmail());
             }
 
             @Override
@@ -60,10 +68,14 @@ Log.d("data",name+sName);
     private void initialize() {
         Fsttext = findViewById(R.id.Fsttext);
         scndtext = findViewById(R.id.scndtext);
-        emailtext=findViewById(R.id.email);
-        phonetext=findViewById(R.id.phone);
+        emailtext = findViewById(R.id.email);
+        phonetext = findViewById(R.id.phone);
         upload = findViewById(R.id.upload);
-        delete=findViewById(R.id.delete);
+        delete = findViewById(R.id.delete);
+        searchText=findViewById(R.id.searchText);
+        show=findViewById(R.id.showsearch);
+        search=findViewById(R.id.search);
+        search.setOnClickListener(this);
         delete.setOnClickListener(this);
         upload.setOnClickListener(this);
     }
@@ -72,10 +84,11 @@ Log.d("data",name+sName);
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.upload:
+
                 name = Fsttext.getText().toString();
                 sName = scndtext.getText().toString();
-                phone=phonetext.getText().toString();
-                email=emailtext.getText().toString();
+                phone = phonetext.getText().toString();
+                emailString = emailtext.getText().toString();
 
 // Write a message to the database
 
@@ -89,16 +102,30 @@ Log.d("data",name+sName);
 //                Map<String, UserModel> users = new HashMap<>();
 //                users.put(, );*/
 
-                myRef.child(name+sName).setValue(new UserModel(name, sName, email,phone));
+                myRef.child(name + sName).setValue(new UserModel(name, sName, emailString, phone));
 
 
 //read Values
-                myRef.child(name+sName).addListenerForSingleValueEvent(new ValueEventListener() {
+
+
+
+                break;
+            case R.id.search:
+
+                searchString=searchText.getText().toString();
+                Query query = myRef.orderByChild("email").equalTo("Veham@gmail.com");
+                Log.d("Query",query.toString());
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        UserModel user = dataSnapshot.getValue(UserModel.class);
-                        Toast.makeText(FireBaseData.this, "" + user, Toast.LENGTH_SHORT).show();
-                        Log.d("DATA", user.Fname);
+                        UserModel user = new UserModel();
+                        DataSnapshot dsp=dataSnapshot.getChildren().iterator().next();
+                        user.Fname = dsp.child("Fname").getValue().toString();
+                        user.Sname = dsp.child("Sname").getValue().toString();
+                        user.email=dsp.child("email").getValue().toString();
+                        user.phone=dsp.child("phone").getValue().toString();
+                        Log.d("response",user.Fname);
+
                     }
 
                     @Override
@@ -107,13 +134,17 @@ Log.d("data",name+sName);
                     }
                 });
 
-
                 break;
             case R.id.delete:
-
+               DatabaseReference mynepro = database.getReference("NEPRO");
+               mynepro.child("SiteList").child("AL-KHOMRA").child("0").removeValue();
                 name = Fsttext.getText().toString();
                 sName = scndtext.getText().toString();
-                myRef.child(name+sName).removeValue();
+                myRef.child(name + sName).removeValue();
+
+
+
+
 
                 break;
         }

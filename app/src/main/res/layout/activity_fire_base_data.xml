@@ -13,36 +13,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:hint="FirstName"
-        android:layout_marginTop="70dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:hint="FirstName" />
+
     <EditText
         android:id="@+id/scndtext"
-        android:hint="SecondName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:hint="SecondName" />
+
     <EditText
         android:id="@+id/email"
-        android:hint="Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:hint="Email" />
 
 
     <EditText
         android:id="@+id/phone"
-        android:hint="Phone No."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="Phone No."
         android:inputType="number" />
 
     <Button
@@ -53,11 +54,14 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:text="SAVE" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_marginTop="20dp"
-    android:layout_height="wrap_content"
-    android:text="Enter first and second name for deltetion:"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Enter first and second name for deltetion:" />
+
     <Button
         android:id="@+id/delete"
         android:layout_width="match_parent"
@@ -66,4 +70,35 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:text="DELETE" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Search By Email:" />
+
+    <EditText
+        android:id="@+id/searchText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:hint="Email" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="SEARCH" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/showsearch"/>
 </LinearLayout>
