@@ -3,6 +3,7 @@ package com.yoekisoft.myapplication.DAtabase;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,6 +63,13 @@ public class FireBaseData extends AppCompatActivity implements View.OnClickListe
             }
         });
 */
+
+
+
+
+
+
+
 
     }
 
@@ -149,4 +157,5 @@ public class FireBaseData extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 }
